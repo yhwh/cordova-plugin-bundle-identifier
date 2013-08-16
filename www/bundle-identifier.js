@@ -16,7 +16,7 @@ BundleIdentifier.prototype.get = function(options, success, error) {
   if (arguments.length == 2) {
     error = function(err) { console.log(err); };
   }
-  cordova.exec(success, error, "BundleIdentifier", "compose", options ? [options] : []);
+  cordova.exec(success, error, "BundleIdentifier", "get", options ? [options] : []);
 };
 
 var bundleIdentifier = new BundleIdentifier();
