@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+           id="com.wunwun.plugins.bundle-identifier"
+      version="1.0.0">
+
+  <name>BundleIdentifier</name>
+  <author>Calvin Lai</author>
+  <description>Simple Cordova (3.0) plugin to retrieve the Bundle ID for an iOS application.</description>
+
+  <js-module src="www/bundle-identifier.js" name="BundleIdentifier">
+    <clobbers target="plugins.bundleIdentifier" />
+  </js-module>
+
+  <!-- ios -->
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="BundleIdentifier">
+        <param name="ios-package" value="BundleIdentifier" />
+      </feature>
+    </config-file>
+    <header-file src="src/ios/BundleIdentifier.h" />
+    <source-file src="src/ios/BundleIdentifier.m" />
+  </platform>
+
+</plugin>
