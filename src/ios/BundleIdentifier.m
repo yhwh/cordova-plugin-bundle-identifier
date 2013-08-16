@@ -18,8 +18,8 @@
 - (NSMutableDictionary*)callbackIds {
     if (_callbackIds == nil) {
         _callbackIds = [[NSMutableDictionary alloc] init];
-        return _callbackIds;
     }
+    return _callbackIds;
 }
 
 - (void)get:(CDVInvokedUrlCommand*)command {
