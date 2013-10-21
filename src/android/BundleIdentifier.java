@@ -1,4 +1,4 @@
-package com.wunwun.plugins.bundleidentifier.BundleIdentifier;
+package com.wunwun.plugins.bundleidentifier;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
