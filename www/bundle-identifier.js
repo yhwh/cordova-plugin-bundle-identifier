@@ -13,9 +13,6 @@ var BundleIdentifier = function() {
 
 // Call this to register for push notifications and retreive a deviceToken
 BundleIdentifier.prototype.get = function(options, success, error) {
-  if (arguments.length == 2) {
-    error = function(err) { console.log(err); };
-  }
   cordova.exec(success, error, "BundleIdentifier", "get", options ? [options] : []);
 };
 
