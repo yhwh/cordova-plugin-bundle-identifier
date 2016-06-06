@@ -7,20 +7,16 @@
 
 #import <Foundation/Foundation.h>
 #import <Cordova/CDVPlugin.h>
-#import <Social/Social.h>
-#import <Accounts/Accounts.h>
 
 @interface BundleIdentifier : CDVPlugin {
 
   NSMutableDictionary* callbackIds;
-//    NSString * phoneNumber;
-//    NSString * messageText;
+
 
 }
 
 @property (nonatomic, retain) NSMutableDictionary* callbackIds;
-//@property (nonatomic, retain) NSString *phoneNumber;
-//@property (nonatomic, retain) NSString *messageText;
+
 
 - (void)get:(CDVInvokedUrlCommand*)command;
 
