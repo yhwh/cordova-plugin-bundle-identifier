@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 #import <Cordova/CDVPlugin.h>
+#import <Social/Social.h>
+#import <Accounts/Accounts.h>
 
 @interface BundleIdentifier : CDVPlugin {
 

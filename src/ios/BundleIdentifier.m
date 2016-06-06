@@ -27,15 +27,19 @@
 
     [self.callbackIds setValue:command.callbackId forKey:@"get"];
 
-
+    NSString *buildNumber = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString*)kCFBundleVersionKey];
+    NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     NSString *bundleId = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
- 
+    NSString *bundleDisplayName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];
+    NSString *bundleIconPath = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIconFile"];
 
     NSMutableDictionary *resultDictionary = [NSMutableDictionary dictionary];
 
-
+    [resultDictionary setObject: buildNumber forKey: @"buildNumber"];
+    [resultDictionary setObject: appVersion forKey: @"appVersion"];
     [resultDictionary setObject: bundleId forKey: @"bundleId"];
-
+    [resultDictionary setObject: bundleDisplayName forKey: @"bundleDisplayName"];
+    [resultDictionary setObject: bundleIconPath forKey: @"bundleIconPath"];
 
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary: resultDictionary];
     [self writeJavascript:[pluginResult toSuccessCallbackString:[self.callbackIds valueForKey:@"get"]]];
@@ -43,4 +47,3 @@
 
 
 @end
-
